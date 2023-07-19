@@ -1,0 +1,27 @@
+SLS U-boot-imx compilation stages
+=================================
+Create Environment:
+------------------
+*Link: 
+*Steps:
+-Download the folder from the above link
+-Extract the ZIP folder
+-Go to the folder
+-Run the script using below command
+	./fsl-imx-fb-glibc-x86_64-meta-toolchain-cortexa7t2hf-neon-imx6ull14x14evk-toolchain-5.15-kirkstone.sh
+	Press "Enter"
+	Press 'Y' and then "Enter"
+
+*U-boot Link: https://github.com/nxp-imx/uboot-imx.git
+
+Compilation stage:
+------------------
+- source /opt/fsl-imx-fb/5.15-kirkstone/environment-setup-cortexa7t2hf-neon-poky-linux-gnueabi
+- make distclean
+- make <config_file_name>
+- make -j16
+
+*config_file_name:
+- for nand : mx6ull_14x14_evk_nand_defconfig
+- for emmc : mx6ull_14x14_evk_emmc_defconfig
+- For SD : mx6ull_14x14_evk_defconfig
